@@ -8,18 +8,20 @@
 
       # Terminal&Editor
       alacritty
+      lunarvim
       helix
       vscode
 
       # CLI app
       bottom
       brightnessctl
-      cargo
+      htop
       git
       gnutar
       lazygit
       neofetch
-      protonup
+      pandoc
+      #protonup
       ranger
       swww
       tree
@@ -29,13 +31,12 @@
 
       # GUI app
       arduino-ide
-      bottles
+      #bottles
       chromium
       floorp
-      heroic
-      mangohud
+      #heroic
+      #mangohud
       pavucontrol
-      slack
       thunderbird
       zoom-us
 
@@ -44,14 +45,14 @@
       slurp
 
       # programing language specific
-      adafruit-nrfutil #arduino-ide need it
+      clang
       gcc
       llvm
       marksman
-      nim
-      nimble
       python311
       pyright
+      zig
+      zls
       
       # Wayland/hyprland specific
       hyprland
@@ -65,9 +66,8 @@
 
       # Other
       home-manager
-      wlroots
-      pandoc
       pulseaudio
+      wlroots
     ];
   };
 }

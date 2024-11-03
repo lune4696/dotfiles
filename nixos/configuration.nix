@@ -16,12 +16,7 @@
   # Configure console keymap
   console.keyMap = "us";
 
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-  };
+  programs.hyprland.enable = true;
 
   system.stateVersion = "23.05";
 }
