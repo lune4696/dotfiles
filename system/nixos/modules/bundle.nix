@@ -8,6 +8,8 @@
     ./nix.nix
     ./services.nix
     ./sound.nix
+    ./steam.nix
+    ./systemd.nix
     ./user.nix
     ./zram.nix
   ];

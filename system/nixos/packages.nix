@@ -8,29 +8,35 @@
 
       # Terminal&Editor
       alacritty
+      lunarvim
       helix
       vscode
 
       # CLI app
       bottom
+      brightnessctl
+      htop
       git
       gnutar
       lazygit
       neofetch
+      #protonup
       ranger
       swww
       tree
       unzip
+      usbutils
       wget
       zip
 
       # GUI app
-      arandr
       arduino-ide
+      #bottles
       chromium
       floorp
+      #heroic
+      #mangohud
       pavucontrol
-      slack
       thunderbird
       zoom-us
 
@@ -43,10 +49,9 @@
       gcc
       llvm
       marksman
-      nim
-      nimble
       python311
       pyright
+      zig
       
       # Wayland/hyprland specific
       hyprland
@@ -57,10 +62,12 @@
 
       # About GPU
       amdvlk
-      glaxnimate
 
       # Other
       home-manager
+      wlroots
+      pandoc
+      pulseaudio
     ];
   };
 }
