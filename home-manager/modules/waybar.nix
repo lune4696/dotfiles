@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       mainBar = {
-        layer = "top";
+        layer = "bottom";
         position = "top";
         margin = "2 2 -4 4";
 

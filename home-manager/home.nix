@@ -12,7 +12,7 @@
   home.sessionVariables = {
     EDITOR = "lvim";
     BROWSER = "floorp";
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";

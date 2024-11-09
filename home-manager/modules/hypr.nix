@@ -8,7 +8,7 @@
 
       monitor = [
         "eDP-1,2560x1600@60,auto,1.6"
-        "DP-1,preferred,auto,1"
+        "DP-1,preferred,auto,1.6"
       ];
 
       env = [
@@ -113,6 +113,7 @@
         "tile, class:^(Floorp)$"
         "tile, class:^(firefox)$"
         "tile, class:^(Alacritty)$"
+        "tile, class:^(kitty)$"
       ];
 
       exec-once = [
@@ -128,11 +129,11 @@
       ];
 
       bind = [
-        "$mainMod, Return, exec, alacritty"
-        "$mainMod, T, exec, alacritty"
+        "$mainMod, Return, exec, kitty"
+        "$mainMod, T, exec, kitty"
         "$mainMod, C, killactive"
-        "$mainMod, M, exit,"
-        "$mainMod, E, exec, dolphin"
+        "$mainMod, esc, exit,"
+        "$mainMod, E, exec, ranger"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, rofi -show drun -show-icons"
         "$mainMod, P, pseudo, # dwindle"
@@ -192,7 +193,8 @@
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
 
-        "$mainMod, F12, exec, grim"
+        "$mainMod SHIFT, F12, exec, sh $HOME/.scripts/grimhere/grimhere.sh"
+        "$mainMod, F12, exec, grim $HOME/Pictures/screenshot/tmp.png"
 
         "$mainMod, h, exec, pkill -SIGUSR1 waybar"
       ];

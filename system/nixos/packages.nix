@@ -8,13 +8,22 @@
 
       # Terminal&Editor
       alacritty
-      lunarvim
+      kitty
       helix
+      lunarvim
       vscode
+
+      # for lunarvim
+      chafa # for image support
+      ffmpegthumbnailer
+      imagemagick
+      ripgrep
+      ueberzug
 
       # CLI app
       bottom
       brightnessctl
+      entr
       htop
       git
       gnutar
@@ -27,6 +36,7 @@
       unzip
       usbutils
       wget
+      wl-clipboard
       zip
 
       # GUI app
@@ -36,6 +46,7 @@
       floorp
       #heroic
       #mangohud
+      mpv
       pavucontrol
       thunderbird
       zoom-us
@@ -49,7 +60,8 @@
       gcc
       llvm
       marksman
-      python311
+      python312
+      python312Packages.pillow
       pyright
       zig
       
