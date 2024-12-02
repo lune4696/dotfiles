@@ -7,8 +7,10 @@
       "$mainMod" = "SUPER";
 
       monitor = [
-        "eDP-1,2560x1600@60,auto,1.6"
-        "DP-1,preferred,auto,1.6"
+        "eDP-1,2560x1600@60,0x0,1.6"
+        "DP-1,preferred,-400x-1350,1.6"
+        "DP-2,preferred,auto,1"
+        "HDMI-A-1,preferred,-480x-1080,1"
       ];
 
       env = [
@@ -32,11 +34,11 @@
         repeat_rate = 25;
         repeat_delay = 200;
         sensitivity = 0.2;
-        scroll_method = "edge";
+        scroll_method = "2fg";
 
         touchpad = {
-          natural_scroll = false;
-          scroll_factor = 0.5;
+          natural_scroll = true;
+          scroll_factor = 0.2;
         };
       };
 
@@ -133,7 +135,7 @@
         "$mainMod, T, exec, kitty"
         "$mainMod, C, killactive"
         "$mainMod, esc, exit,"
-        "$mainMod, E, exec, ranger"
+        "$mainMod, E, exec, kitty ranger"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, rofi -show drun -show-icons"
         "$mainMod, P, pseudo, # dwindle"

@@ -17,6 +17,11 @@
       enable = true;
     };
 
+
+    udev.extraRules = ''
+      SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="028e", MODE="0660, TAG+="uaccess""
+    '';
+
     xremap = {
       withWlroots = true;
       # withHypr = true; # At now, Hyprland use wlroots, but in future, it aims to become free from wlroots, so I left this option for future.

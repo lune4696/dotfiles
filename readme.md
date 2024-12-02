@@ -20,7 +20,7 @@ tested on my machine (24/11/04)
 0. Install nixos (w/ GUI) to your pc and launch it
 1. Copy/Clone this repository
 2. Make sure that there are no hardware-configuration.nix in .dotfiles/system/nixos !!!
-3. sudo cp -r ~/.dotfiles/system/* /etc/nixos/
+3. sudo cp -r ~/.dotfiles/nixos/* /etc/nixos/
 4. cp -r ~/.dotfiles/home-manager ~/.config/
 5. cd /etc/nixos | sudo nixos-rebuild switch --flake ./#WM2
 6. cd | home-manager switch

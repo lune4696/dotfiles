@@ -15,21 +15,24 @@
 
       # for lunarvim
       chafa # for image support
-      ffmpegthumbnailer
-      imagemagick
       ripgrep
-      ueberzug
+
+      # for c
+      cmake
+      gnumake
 
       # CLI app
       bottom
       brightnessctl
+      diskonaut
       entr
       htop
       git
       gnutar
       lazygit
       neofetch
-      #protonup
+      poop
+      protonup
       ranger
       swww
       tree
@@ -41,11 +44,12 @@
 
       # GUI app
       arduino-ide
-      #bottles
+      bottles
       chromium
       floorp
-      #heroic
-      #mangohud
+      heroic
+      kicad
+      mangohud
       mpv
       pavucontrol
       thunderbird
@@ -80,6 +84,7 @@
       wlroots
       pandoc
       pulseaudio
+      wayland-scanner
     ];
   };
 }
