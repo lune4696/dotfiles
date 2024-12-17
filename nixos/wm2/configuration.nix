@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
+{ lib, ... }:
 
 {  
   imports =
@@ -19,5 +19,9 @@
   programs.hyprland.enable = true;
   programs.nix-ld.enable = true;
 
-  system.stateVersion = "23.05";
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "google-chrome"
+  ];
+
+  system.stateVersion = "24.11";
 }

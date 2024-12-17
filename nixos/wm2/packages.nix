@@ -9,22 +9,18 @@
       # Terminal&Editor
       alacritty
       kitty
-      helix
       lunarvim
       vscode
 
       # for lunarvim
       chafa # for image support
-      ripgrep
 
       # for c
       cmake
-      gnumake
 
       # CLI app
       bottom
       brightnessctl
-      diskonaut
       entr
       htop
       git
@@ -32,7 +28,6 @@
       lazygit
       neofetch
       poop
-      protonup
       ranger
       swww
       tree
@@ -47,9 +42,8 @@
       bottles
       chromium
       floorp
-      heroic
+      google-chrome
       kicad
-      mangohud
       mpv
       pavucontrol
       thunderbird
@@ -61,11 +55,11 @@
 
       # programing language specific
       adafruit-nrfutil #arduino-ide need it
+      elixir
       gcc
       llvm
       marksman
       python312
-      python312Packages.pillow
       pyright
       zig
       
@@ -81,10 +75,11 @@
 
       # Other
       home-manager
-      wlroots
+      openblas
       pandoc
       pulseaudio
       wayland-scanner
+      wlroots
     ];
   };
 }

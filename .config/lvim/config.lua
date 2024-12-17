@@ -10,6 +10,8 @@ lvim.transparent_window = true
 
 lvim.leader = "space"
 
+vim.opt.wrap = true
+
 lvim.builtin.telescope.defaults.layout_config.width = 0.9
 lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 40
 lvim.builtin.telescope.theme = "center"

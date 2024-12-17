@@ -2,13 +2,9 @@
   description = "Lune's flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xremap-flake.url = "github:xremap/nix-flake";
@@ -19,13 +15,12 @@
       system = "x86_64-linux";
     in {
       nixosConfigurations = {
-        WM2 = inputs.nixpkgs.lib.nixosSystem {
+        wm2 = inputs.nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs system;
           };
           modules = [
-            ./nixos/configuration.nix
-            inputs.nixvim.nixosModules.nixvim
+            ./wm2/configuration.nix
             inputs.xremap-flake.nixosModules.default
           ];
         };

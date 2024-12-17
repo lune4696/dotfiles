@@ -6,11 +6,11 @@
   home = {
     username = "lune";
     homeDirectory = "/home/lune";
-    stateVersion = "23.11";
+    stateVersion = "24.11";
   };
 
   home.sessionVariables = {
-    EDITOR = "lvim";
+    EDITOR = "nano";
     BROWSER = "floorp";
     TERMINAL = "kitty";
     GTK_IM_MODULE = "fcitx";
