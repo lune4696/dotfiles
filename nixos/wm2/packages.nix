@@ -7,25 +7,25 @@
     systemPackages = with pkgs; [
 
       # Terminal&Editor
-      alacritty
+      #alacritty
       kitty
-      lunarvim
+      helix
+      #lunarvim
       vscode
 
-      # for lunarvim
-      chafa # for image support
-
-      # for c
-      cmake
+      ## for lunarvim
+      #chafa # for image support
 
       # CLI app
       bottom
       brightnessctl
       entr
+      fusuma
       htop
       git
       gnutar
       lazygit
+      libinput
       neofetch
       poop
       ranger
@@ -35,12 +35,19 @@
       usbutils
       wget
       wl-clipboard
+      wtype
       zip
+      # hypr ecosystem
+      hypridle
+      hyprlang
+      hyprpicker
+      hyprutils
+      hyprwayland-scanner
 
       # GUI app
+      affine
       arduino-ide
       bottles
-      chromium
       floorp
       google-chrome
       kicad
@@ -55,15 +62,19 @@
 
       # programing language specific
       adafruit-nrfutil #arduino-ide need it
+      clang
+      cmake
       elixir
       gcc
+      julia
       llvm
       marksman
-      python312
+      python314
       pyright
       zig
+      zls
       
-      # Wayland/hyprland specific
+      # desktop environment
       hyprland
       libnotify
       mako

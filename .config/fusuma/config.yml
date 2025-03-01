@@ -1,0 +1,6 @@
+swipe:
+  4:
+    up:
+      command: 'rofi -show drun -show-icons -auto-close'
+    down:
+      command: 'wtype -P escape -p escape'

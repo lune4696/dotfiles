@@ -1,0 +1,4 @@
+inherits = "base16_default_dark"
+"ui.background" = {}
+"ui.gutter" = {}
+"ui.linenr" = {}

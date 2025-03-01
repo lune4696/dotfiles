@@ -22,6 +22,10 @@
           modules = [
             ./wm2/configuration.nix
             inputs.xremap-flake.nixosModules.default
+            {
+              environment.systemPackages = [
+              ];
+            }
           ];
         };
       };

@@ -1,0 +1,49 @@
+theme = "base16_default_dark-transparent" # 任意のテーマ
+
+[editor]
+true-color = true # デフォルトがfalseなのでこれをtrueにする、これのせいでテーマが上手く機能しない
+cursorline = true # これもデフォルトでfalseなのでtrueにするとlihgtlineみたいな見た目になる
+color-modes = true # falseにすると何故かlspが死ぬ
+auto-completion = true # 任意のキーで補完をしたい人はfalseにする
+auto-save = false # これも任意で保存したい人はfalseにする
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# デフォルトのこれで個人的には良い気がする
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│" # 正直わかっていない
+# 左下のモード名を任意の文字列に変えられる．ここで絵文字を使っても面白いかも
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+
+[editor.file-picker]
+max-depth = 6 # pickerの検索するフォルダーの深さ
+hidden = true # 隠しファイルフォルダーを検索する
+
+[editor.whitespace.render]
+space = "all" # "all"か"none"の2択しかない
+tab = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+
+[editor.indent-guides]
+render = true # 個人の好みで、スペースよりもガイド派はこちらをtrueにする
+character = "|" # バーティカルバーも好きにできるので:とかにしても良いかも
+
+[editor.soft-wrap]
+enable = true # ソフトラップによる改行を追加
+# よくわかっていない
+max-wrap = 20 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 20 # 改行ごのインデントの数
+wrap-indicator = ""  # ソフトラップ改行したところの改行を表示

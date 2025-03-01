@@ -3,7 +3,7 @@
     defaultUserShell = pkgs.bash;
     users.lune = {
       isNormalUser = true;
-      description = "Lune";
+      description = "lune";
       extraGroups = [ "networkmanager" "wheel" "light" "audio" "dialout" ];
       packages = with pkgs; [];
     }; 
