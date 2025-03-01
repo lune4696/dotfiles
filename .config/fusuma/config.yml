@@ -1,6 +1,17 @@
 swipe:
   4:
     up:
-      command: 'rofi -show drun -show-icons -auto-close'
+      command: 'wtype -P up -p up'
     down:
-      command: 'wtype -P escape -p escape'
+      command: 'wtype -P down -p down'
+    left:
+      command: 'wtype -P left -p left'
+    right:
+      command: 'wtype -P right -p right'
+hold:
+  2:
+    command: 'wtype -P return -p return'
+  3:
+    command: 'wtype -P escape -p escape'
+  4: 
+    command: 'rofi -show drun -show-icons -auto-close'
