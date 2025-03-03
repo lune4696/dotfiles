@@ -1,4 +1,3 @@
-# zig
 [[language]]
 name = "zig"
 scope = "source.zig"
@@ -39,6 +38,7 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 name = "zig"
 source = { git = "https://github.com/maxxnino/tree-sitter-zig", rev = "eb7d58c2dc4fbeea4745019dee8df013034ae66b" }
 
+
 [[language]]
 name = "rust"
 scope = "source.rust"
@@ -55,6 +55,21 @@ block-comment-tokens = [
 language-servers = [ "rust-analyzer" ]
 indent = { tab-width = 4, unit = "    " }
 persistent-diagnostic-sources = ["rustc", "clippy"]
+
+[[grammar]]
+name = "rust"
+source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "0431a2c60828731f27491ee9fdefe25e250ce9c9" }
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.config]
+inlayHints.bindingModeHints.enable = false
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false
 
 # c
 [[language]]
@@ -94,7 +109,7 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 name = "c"
 source = { git = "https://github.com/tree-sitter/tree-sitter-c", rev = "7175a6dd5fc1cee660dce6fe23f6043d75af424a" }
 
-# cpp
+
 [[language]]
 name = "cpp"
 scope = "source.cpp"
@@ -132,20 +147,6 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 name = "cpp"
 source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "670404d7c689be1c868a46f919ba2a3912f2b7ef" }
 
-[[grammar]]
-name = "rust"
-source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "0431a2c60828731f27491ee9fdefe25e250ce9c9" }
-
-[language-server.rust-analyzer]
-command = "rust-analyzer"
-
-[language-server.rust-analyzer.config]
-inlayHints.bindingModeHints.enable = false
-inlayHints.closingBraceHints.minLines = 10
-inlayHints.closureReturnTypeHints.enable = "with_block"
-inlayHints.discriminantHints.enable = "fieldless"
-inlayHints.lifetimeElisionHints.enable = "skip_trivial"
-inlayHints.typeHints.hideClosureInitialization = false
 
 [[language]]
 name = "python"
@@ -153,7 +154,7 @@ scope = "source.python"
 injection-regex = "python"
 file-types = ["py", { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "SConstruct" }, { glob = "SConscript" }]
 shebangs = ["python"]
-roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
+#roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
 comment-token = "#"
 language-servers = [ "pyright" ]
 # TODO: pyls needs utf-8 offsets
@@ -163,21 +164,21 @@ indent = { tab-width = 4, unit = "    " }
 name = "python"
 source = { git = "https://github.com/tree-sitter/tree-sitter-python", rev = "4bfdd9033a2225cc95032ce77066b7aeca9e2efc" }
 
+
 [[language]]
-name = "julia"
-scope = "source.julia"
-injection-regex = "julia"
-file-types = ["jl"]
-shebangs = ["julia"]
-roots = ["Manifest.toml", "Project.toml"]
+name = "elixir"
+scope = "source.elixir"
+injection-regex = "(elixir|ex)"
+file-types = ["ex", "exs", { glob = "mix.lock" }]
+shebangs = ["elixir"]
+roots = ["mix.exs", "mix.lock"]
 comment-token = "#"
-block-comment-tokens = { start = "#=", end = "=#" }
-language-servers = [ "julia" ]
-indent = { tab-width = 4, unit = "    " }
+language-servers = [ "elixir-ls" ]
+indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
-name = "julia"
-source = { git = "https://github.com/tree-sitter/tree-sitter-julia", rev = "8fb38abff74652c4faddbf04d2d5bbbc6b4bae25" }
+name = "elixir"
+source = { git = "https://github.com/elixir-lang/tree-sitter-elixir", rev = "02a6f7fd4be28dd94ee4dd2ca19cb777053ea74e" }
 
 
 [[language]]
@@ -193,6 +194,7 @@ block-comment-tokens = { start = "<!--", end = "-->" }
 [[grammar]]
 name = "markdown"
 source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-markdown", rev = "62516e8c78380e3b51d5b55727995d2c511436d8", subpath = "tree-sitter-markdown" }
+
 
 [[language]]
 name = "json"
@@ -243,6 +245,7 @@ indent = { tab-width = 2, unit = "  " }
 name = "json"
 source = { git = "https://github.com/tree-sitter/tree-sitter-json", rev = "73076754005a460947cafe8e03a8cf5fa4fa2938" }
 
+
 [[language]]
 name = "jsonc"
 scope = "source.json"
@@ -254,6 +257,7 @@ grammar = "json"
 language-servers = [ "vscode-json-language-server" ]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
+
 
 [[language]]
 name = "json5"
@@ -269,6 +273,7 @@ indent = { tab-width = 4, unit = "    " }
 name = "json5"
 source = { git = "https://github.com/Joakker/tree-sitter-json5", rev = "c23f7a9b1ee7d45f516496b1e0e4be067264fa0d" }
 
+
 [[language]]
 name = "toml"
 scope = "source.toml"
@@ -282,6 +287,7 @@ indent = { tab-width = 2, unit = "  " }
 name = "toml"
 source = { git = "https://github.com/ikatyang/tree-sitter-toml", rev = "7cff70bbcbbc62001b465603ca1ea88edd668704" }
 
+
 [[language]]
 name = "hyprlang"
 scope = "source.hyprlang"
@@ -293,42 +299,3 @@ grammar = "hyprlang"
 [[grammar]]
 name = "hyprlang"
 source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang", rev = "27af9b74acf89fa6bed4fb8cb8631994fcb2e6f3"}
-
-[language-server.ziggy-lsp]
-command = "ziggy"
-args = ["lsp"]
-
-[[language]]
-name = "ziggy"
-scope = "text.ziggy"
-roots = []
-injection-regex = "ziggy|zgy"
-file-types = ["ziggy", "zgy"]
-comment-token = "//"
-auto-format = true
-formatter = { command = "ziggy" , args = ["fmt", "--stdin"] }
-language-servers = [ "ziggy-lsp" ]
-
-[[grammar]]
-name = "ziggy"
-source = { git = "https://github.com/kristoff-it/ziggy", rev = "0e46579ed878bb28a78cf624c2e593eb39301648", subpath = "tree-sitter-ziggy" }
-
-[[language]]
-name = "ziggy_schema"
-scope = "text.ziggy_schema"
-roots = []
-injection-regex = "ziggy-schema|zgy-schema"
-file-types = ["ziggy-schema", "zgy-schema"]
-comment-token = "///"
-indent = { tab-width = 4, unit = "    " }
-formatter = { command = "ziggy" , args = ["fmt", "-", "--type", "schema"] }
-auto-format = true
-language-servers = [ "ziggy-schema-lsp" ]
-
-[[grammar]]
-name = "ziggy_schema"
-source = { git = "https://github.com/kristoff-it/ziggy", rev = "0e46579ed878bb28a78cf624c2e593eb39301648", subpath = "tree-sitter-ziggy-schema" }
-
-[language-server.ziggy-schema-lsp]
-command = "ziggy"
-args = ["lsp", "--schema"]

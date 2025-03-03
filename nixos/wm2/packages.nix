@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
+    nvidia.acceptLicense = true;
   };
   environment = {
     pathsToLink = ["/libexec"];
@@ -65,10 +66,11 @@
       clang
       cmake
       elixir
+      elixir-ls
       gcc
-      julia
       llvm
       marksman
+      nil
       python314
       pyright
       zig
@@ -80,9 +82,6 @@
       mako
       rofi-wayland
       waybar
-
-      # About GPU
-      amdvlk
 
       # Other
       home-manager
