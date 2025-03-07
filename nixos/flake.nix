@@ -28,6 +28,19 @@
             }
           ];
         };
+        jade57 = inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs system;
+          };
+          modules = [
+            ./jade57/configuration.nix
+            inputs.xremap-flake.nixosModules.default
+            {
+              environment.systemPackages = [
+              ];
+            }
+          ];
+        };
       };
      homeConfigurations.lune = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
