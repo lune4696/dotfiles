@@ -23,6 +23,7 @@ mode.normal = "NOR"
 mode.insert = "INS"
 mode.select = "SEL"
 
+
 [editor.file-picker]
 max-depth = 6 # pickerの検索するフォルダーの深さ
 hidden = true # 隠しファイルフォルダーを検索する
