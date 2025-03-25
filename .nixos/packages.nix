@@ -22,6 +22,8 @@
       lazygit
       libinput
       neofetch
+      nvtopPackages.amd
+      nvtopPackages.intel
       poop
       ranger
       swww
