@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     glxinfo
     mangohud
-    protonup
+    protonplus
+    vkd3d-proton
   ];
 }

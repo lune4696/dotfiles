@@ -1,7 +1,7 @@
 {
   imports = [
     ./bluetooth.nix
-    ./bootloader.nix
+    ./boot.nix
     ./env.nix
     ./font.nix
     ./local.nix
@@ -11,6 +11,7 @@
     ./steam.nix
     ./systemd.nix
     ./user.nix
+    ./virtualisation.nix
     ./zram.nix
   ];
 }

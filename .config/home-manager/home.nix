@@ -2,11 +2,26 @@
   imports = [
     ./modules/bundle.nix
   ];
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
   
   home = {
     username = "lune";
     homeDirectory = "/home/lune";
     stateVersion = "24.11";
+    packages = [
+      pkgs.arduino-ide
+      pkgs.floorp
+      pkgs.helix
+      pkgs.google-chrome
+      pkgs.kicad
+      pkgs.thunderbird
+      pkgs.zoom-us
+    ];
   };
 
   home.sessionVariables = {

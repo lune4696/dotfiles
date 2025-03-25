@@ -4,7 +4,7 @@
     users.lune = {
       isNormalUser = true;
       description = "lune";
-      extraGroups = [ "networkmanager" "wheel" "light" "audio" "dialout" ];
+      extraGroups = [ "networkmanager" "wheel" "light" "audio" "dialout" "lp" "docker" ];
       packages = with pkgs; [];
     }; 
 

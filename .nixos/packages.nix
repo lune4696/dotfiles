@@ -38,6 +38,11 @@
       hyprutils
       hyprwayland-scanner
 
+      # bluetooth
+      blueman
+      bluetui
+      bluez
+
       # GUI app
       bottles
       mpv

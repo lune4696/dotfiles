@@ -12,7 +12,8 @@
         modules-right = ["cpu" "memory" "network" "pulseaudio" "backlight" "battery" "tray" "clock"];
 
         "hyprland/workspaces" = {
-          disable-scroll = true;
+          enable-bar-scroll = true;
+          disable-scroll = false;
         };
 
         "cpu" = {
