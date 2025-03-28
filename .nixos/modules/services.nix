@@ -17,6 +17,8 @@
       enable = true;
     };
 
+    printing.enable = true;
+
     udev.extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="028e", MODE="0660, TAG+="uaccess""
     '';
