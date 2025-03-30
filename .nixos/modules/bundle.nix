@@ -10,7 +10,6 @@
     ./sound.nix
     ./steam.nix
     ./systemd.nix
-    ./user.nix
     ./virtualisation.nix
     ./zram.nix
   ];

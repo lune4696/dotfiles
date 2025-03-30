@@ -7,6 +7,7 @@
     builtins.elem (lib.getName pkg) [
       "adafruit-nrfutil"
       "google-chrome"
+      "vscode"
       "zoom"
     ];
 
@@ -23,6 +24,7 @@
       pkgs.google-chrome
       pkgs.kicad
       pkgs.thunderbird
+      pkgs.vscode
       pkgs.zoom-us
     ];
   };

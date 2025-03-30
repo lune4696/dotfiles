@@ -2,6 +2,7 @@
   nixpkgs.config = {
     allowUnfree = false;
   };
+
   environment = {
     pathsToLink = ["/libexec"];
     systemPackages = with pkgs; [
@@ -12,7 +13,6 @@
 
       # Editor
       helix
-      vscode
 
       # compress/decompress
       gnutar
