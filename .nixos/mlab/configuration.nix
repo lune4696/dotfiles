@@ -1,11 +1,13 @@
-{ lib, ... }:
+{ ... }:
 
 {  
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/bundle.nix
-      ../packages.nix
+      ./packages/bundle.nix
+      ../modules/bundle.nix
+      ../packages/bundle.nix
     ];
 
   networking = {
@@ -18,10 +20,6 @@
 
   programs.hyprland.enable = true;
   programs.nix-ld.enable = true;
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "google-chrome"
-  ];
 
   system.stateVersion = "24.11";
 }

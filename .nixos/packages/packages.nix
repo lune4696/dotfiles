@@ -1,87 +1,99 @@
 { pkgs, ... }: {
   nixpkgs.config = {
-    allowUnfree = true;
-    nvidia.acceptLicense = true;
+    allowUnfree = false;
   };
   environment = {
     pathsToLink = ["/libexec"];
     systemPackages = with pkgs; [
+      home-manager
 
-      # Terminal&Editor
+      # Terminal
       kitty
+
+      # Editor
       helix
       vscode
 
-      # CLI app
-      bottom
-      brightnessctl
-      fusuma
-      htop
-      git
+      # compress/decompress
       gnutar
-      lazygit
-      libinput
-      neofetch
-      nvtopPackages.amd
-      nvtopPackages.intel
-      poop
-      ranger
-      swww
-      tree
+      zip
       unzip
-      usbutils
+
+      #git
+      git
+      lazygit
+
+      # monitoring
+      bottom
+      htop
+      neofetch
+      
+      # wayland
       wget
       wl-clipboard
       wtype
-      zip
+      wayland-scanner
+      wlroots
+
+      # hardware
+      brightnessctl
+      pavucontrol
+      pulseaudio
+      usbutils
+
       # hypr ecosystem
+      hyprland
       hyprlang
       hyprpicker
       hyprutils
       hyprwayland-scanner
+
+      # desktop
+      fusuma
+      swww
+      libnotify
+      mako
+      rofi-wayland
+      waybar
 
       # bluetooth
       blueman
       bluetui
       bluez
 
-      # GUI app
-      bottles
-      mpv
-      pavucontrol
+      # filer
+      ranger
+      tree
 
       # Screenshot
       grim
       slurp
 
       # programing language specific
-      adafruit-nrfutil #arduino-ide need it
+      # C
       clang
-      cmake
-      elixir
-      elixir-ls
       gcc
       llvm
+      cmake
+      # elixir
+      elixir
+      elixir-ls
+      # markdown
       marksman
+      # nix
       nil
+      # python
       python314
       pyright
+      # zig
       zig
       zls
       
-      # desktop environment
-      hyprland
-      libnotify
-      mako
-      rofi-wayland
-      waybar
 
       # Other
-      home-manager
+      bottles
+      mpv
       pandoc
-      pulseaudio
-      wayland-scanner
-      wlroots
     ];
   };
 }
