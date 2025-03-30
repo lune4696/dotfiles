@@ -1,13 +1,15 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   imports = [
     ./modules/bundle.nix
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "adafruit-nrfutil"
+      "google-chrome"
+      "zoom"
+    ];
+
   
   home = {
     username = "lune";
@@ -15,6 +17,7 @@
     stateVersion = "24.11";
     packages = [
       pkgs.arduino-ide
+      pkgs.adafruit-nrfutil
       pkgs.floorp
       pkgs.helix
       pkgs.google-chrome

@@ -26,7 +26,7 @@ mode.select = "SEL"
 
 [editor.file-picker]
 max-depth = 6 # pickerの検索するフォルダーの深さ
-hidden = true # 隠しファイルフォルダーを検索する
+hidden = false # 隠しファイルフォルダーを検索する
 
 [editor.whitespace.render]
 space = "all" # "all"か"none"の2択しかない
