@@ -28,6 +28,9 @@
       "libnvjitlink"
       "libcusparse"
       "libnpp"
+      "steam"
+      "steam-unwrapped"
+      "nvidia-settings"
     ];
   environment = {
     pathsToLink = ["/libexec"];
