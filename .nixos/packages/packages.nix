@@ -44,6 +44,7 @@
       # hypr ecosystem
       hyprland
       hyprlang
+      hyprlock
       hyprpicker
       hyprutils
       hyprwayland-scanner
