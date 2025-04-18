@@ -30,6 +30,7 @@
       
       # wayland
       wget
+      wev
       wl-clipboard
       wtype
       wayland-scanner

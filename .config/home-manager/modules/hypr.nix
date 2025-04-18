@@ -193,6 +193,10 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+        "ALT_L, mouse:276, workspace, e+1" # side button up
+        "ALT_L, mouse:275, workspace, e-1" # side button down
+        # left mouse button: 272
+        # right mouse button: 273
 
         "$mainMod SHIFT, F12, exec, sh $HOME/.scripts/grimhere/grimhere.sh"
         "$mainMod, F12, exec, grim $HOME/Pictures/screenshot/tmp.png"
