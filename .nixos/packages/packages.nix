@@ -13,6 +13,7 @@
 
       # Editor
       helix
+      nixvim
 
       # compress/decompress
       gnutar
