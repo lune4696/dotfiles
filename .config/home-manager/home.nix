@@ -11,6 +11,20 @@
       "zoom"
     ];
 
+  # MIME 形式で GUI app の default application を切り替え
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "x-scheme-handler/logseq" = "Logseq.desktop";
+      "x-scheme-handler/mailto" = "userapp-Thunderbird-IT4P22.desktop";
+
+      "x-scheme-handler/mid" = "userapp-Thunderbird-IT4P22.desktop";
+      "message/rfc822" = "userapp-Thunderbird-IT4P22.desktop";
+      "image/jpeg" = "org.xfce.ristretto.desktop";
+      "inode/directory" = "thunar.desktop";
+      #"text/html" = "floorp";
+    };
+  };
   
   home = {
     username = "lune";

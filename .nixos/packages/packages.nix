@@ -8,10 +8,10 @@
     systemPackages = with pkgs; [
       home-manager
 
-      # Terminal
+      # terminal
       kitty
 
-      # Editor
+      # editor
       helix
 
       # compress/decompress
@@ -63,18 +63,15 @@
       bluetui
       bluez
 
-      # filer
-      dolphin # KDE 環境の標準ファイラーなので
-      kdePackages.qtsvg # dolphin の icon を表示するために必要
+      # file manager
       ranger
+
+      # cli app
       tree
 
       # screenshot
       grim
       slurp
-
-      # note app
-      affine
 
       # programing language specific
       # c
@@ -96,9 +93,11 @@
       zig
       zls
 
-      # GUI Framework
+      # qt5
       qt5.full
       qtcreator
+      libsForQt5.kio-extras
+      libsForQt5.ffmpegthumbs
       
       # other
       bottles
