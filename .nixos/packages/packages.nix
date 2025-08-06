@@ -64,6 +64,7 @@
       bluez
 
       # filer
+      dolphin # KDE 環境の標準ファイラーなので
       ranger
       tree
 
