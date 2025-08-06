@@ -67,12 +67,15 @@
       ranger
       tree
 
-      # Screenshot
+      # screenshot
       grim
       slurp
 
+      # note app
+      affine
+
       # programing language specific
-      # C
+      # c
       clang
       gcc
       llvm
@@ -91,7 +94,7 @@
       zig
       zls
       
-      # Other
+      # other
       bottles
       mpv
       pandoc
