@@ -13,7 +13,6 @@
 
       # Editor
       helix
-      nixvim
 
       # compress/decompress
       gnutar
@@ -96,6 +95,10 @@
       # zig
       zig
       zls
+
+      # GUI Framework
+      qt5.full
+      qtcreator
       
       # other
       bottles

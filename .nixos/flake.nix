@@ -32,7 +32,7 @@
         };
         jade57 = inputs.nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs system;
+            inherit inputs system pkgs-unstable;
           };
           modules = [
             ./jade57/configuration.nix

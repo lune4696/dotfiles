@@ -10,13 +10,16 @@
         "eDP-1,2560x1600@60,0x0,1.6"
         "DP-1,preferred,-400x-1350,1.6"
         "DP-2,preferred,auto,1"
-        "HDMI-A-1,preferred,-480x-1080,1"
+        "DP-3,preferred,-1280x0,1"
+        "HDMI-A-1,preferred,-540x1080,1.25"
       ];
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
+        "QT_QPA_PLATFORM,wayland"
+        "QT_QPA_PLATFORMTHEME,qt5ct"
       ];
 
       debug = {
