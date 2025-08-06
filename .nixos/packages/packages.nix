@@ -65,6 +65,7 @@
 
       # filer
       dolphin # KDE 環境の標準ファイラーなので
+      kdePackages.qtsvg # dolphin の icon を表示するために必要
       ranger
       tree
 
