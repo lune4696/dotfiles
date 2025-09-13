@@ -90,6 +90,29 @@
 ;; they are implemented.
 
 
+;; PATH の追加
+;; lsp用
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setq exec-path (cons "/usr/local/bin" exec-path))
+
+;; kotlinc用
+(setenv "PATH" (concat "/usr/local/bin/kotlinc/bin:" (getenv "PATH")))
+(setq exec-path (cons "/usr/local/bin/kotlinc/bin" exec-path))
+
+
+;; kotlin-repl を 'kotlinc -Xrepl' を呼び出すように変更 (2.2系での変更に対応)
+(after! kotlin
+  (setq kotlin-command "kotlinc-repl"))
+
+(after! kotlin-mode
+  (defun my/kotlin-repl ()
+    "Run Kotlin REPL with -Xrepl."
+    (interactive)
+    (pop-to-buffer
+     (make-comint "Kotlin" kotlin-command nil "-Xrepl")))
+  (advice-add 'kotlin-repl :override #'my/kotlin-repl))
+
+
 ;; org mode の設定
 ;; ファイルの場所
 (setq org-directory "~/Documents/org/")
