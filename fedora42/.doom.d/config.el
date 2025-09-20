@@ -120,3 +120,25 @@
 
 (global-set-key (kbd "\C-cs") '(lambda () (interactive)
                                  (show-org-buffer "notes.org")))
+
+;; lispy の wrap を有効化
+(after! lispy
+  (map! :map lispy-mode-map
+        :n "M-(" #'lispy-wrap-round
+        :n "M-[" #'lispy-wrap-brackets
+        :n "M-{" #'lispy-wrap-braces))
+
+;; lispy の一部キーバインドを無効化
+;; [] {} の lispy キーバインドを外す
+(after! lispy
+  (define-key lispy-mode-map (kbd "[") nil)
+  (define-key lispy-mode-map (kbd "]") nil)
+  (define-key lispy-mode-map (kbd "{") nil)
+  (define-key lispy-mode-map (kbd "}") nil))
+
+
+;; [] が lispyville キーバインドから消えないので強制排除
+(after! lispy
+  (evil-define-key 'insert lispy-mode-map
+    (kbd "[") #'self-insert-command
+    (kbd "]") #'self-insert-command))
