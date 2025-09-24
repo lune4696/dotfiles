@@ -122,23 +122,18 @@
                                  (show-org-buffer "notes.org")))
 
 ;; lispy の wrap を有効化
+;; lispy の一部キーバインドを無効化
+;; [] {} の lispy キーバインドを外す
+;; [] が lispyville キーバインドから消えないので強制排除
 (after! lispy
+  (define-key lispy-mode-map (kbd "[") #'lispy-brackets)
+  (define-key lispy-mode-map-evilcp (kbd "[") #'lispy-brackets)
+  (define-key lispy-mode-map-lispy (kbd "[") #'lispy-brackets)
+  (define-key lispy-mode-map (kbd "}") #'lispy-backward)
+  (define-key lispy-mode-map-evilcp (kbd "}") #'lispy-backward)
+  (define-key lispy-mode-map-lispy (kbd "}") #'lispy-backward)
   (map! :map lispy-mode-map
         :n "M-(" #'lispy-wrap-round
         :n "M-[" #'lispy-wrap-brackets
-        :n "M-{" #'lispy-wrap-braces))
-
-;; lispy の一部キーバインドを無効化
-;; [] {} の lispy キーバインドを外す
-(after! lispy
-  (define-key lispy-mode-map (kbd "[") nil)
-  (define-key lispy-mode-map (kbd "]") nil)
-  (define-key lispy-mode-map (kbd "{") nil)
-  (define-key lispy-mode-map (kbd "}") nil))
-
-
-;; [] が lispyville キーバインドから消えないので強制排除
-(after! lispy
-  (evil-define-key 'insert lispy-mode-map
-    (kbd "[") #'self-insert-command
-    (kbd "]") #'self-insert-command))
+        :n "M-{" #'lispy-wrap-braces)
+  )
