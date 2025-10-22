@@ -181,3 +181,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  ))
+
+(use-package! claude-code-ide
+  :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding
+  :config
+  (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
