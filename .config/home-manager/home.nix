@@ -1,4 +1,5 @@
 { lib, pkgs, ... }: {
+
   imports = [
     ./modules/bundle.nix
   ];
@@ -11,41 +12,67 @@
       "zoom"
     ];
 
+  nixpkgs.config.permittedInsecurePackages = [ "python3.12-ecdsa-0.19.1" ];
+
   # MIME 形式で GUI app の default application を切り替え
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "x-scheme-handler/logseq" = "Logseq.desktop";
       "x-scheme-handler/mailto" = "userapp-Thunderbird-IT4P22.desktop";
-
       "x-scheme-handler/mid" = "userapp-Thunderbird-IT4P22.desktop";
       "message/rfc822" = "userapp-Thunderbird-IT4P22.desktop";
-      "image/jpeg" = "org.xfce.ristretto.desktop";
-      "inode/directory" = "thunar.desktop";
-      #"text/html" = "floorp";
+      "inode/directory" = "dolphin.desktop";
     };
   };
-  
+
+  programs = {
+    emacs = {
+      enable = true;
+      extraPackages = epkgs : [ epkgs.vterm ];
+    };
+  };
+
+  #catppuccin = {
+  #  enable = true;
+  #  flavor = "mocha";
+  #  accent = "blue";
+  #};
+
   home = {
     username = "lune";
     homeDirectory = "/home/lune";
-    stateVersion = "24.11";
-    packages = [
-      pkgs.arduino-ide
-      pkgs.adafruit-nrfutil
-      pkgs.floorp
-      pkgs.helix
-      pkgs.google-chrome
-      pkgs.kicad
-      pkgs.thunderbird
-      pkgs.vscode
-      pkgs.zoom-us
+    stateVersion = "25.05";
+    packages = with pkgs; [
+      arduino-ide
+      adafruit-nrfutil
+      kitty
+      google-chrome
+      kicad
+      thunderbird
+      vscode
+      zoom-us
+
+      # emacs
+      git
+      ripgrep
+      coreutils
+      fd
+      clang
+      gnumake
+      cmigemo
+      direnv
+      nix-direnv
+      nodejs
+      shellcheck
+      isort
+      pipenv
+      uv
     ];
   };
 
   home.sessionVariables = {
-    EDITOR = "hx";
-    BROWSER = "floorp";
+    EDITOR = "emacs";
+    BROWSER = "zen-browser";
     TERMINAL = "kitty";
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";

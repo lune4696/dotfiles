@@ -2,7 +2,7 @@
   environment = {
     variables = {
       EDITOR = "hx";
-      MOZ_ENABLE_WAYLAND = 1; # To fix the issue that firefox/floorp are running on Xwayland.
+      MOZ_ENABLE_WAYLAND = 1; # To fix the issue that firefox are running on Xwayland.
       GTK_USE_PORTAL = 1;  
     };
     sessionVariables = {

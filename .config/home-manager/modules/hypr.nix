@@ -7,11 +7,8 @@
       "$mainMod" = "SUPER";
 
       monitor = [
-        "eDP-1,2560x1600@60,0x0,1.6"
-        "DP-1,preferred,-400x-1350,1.6"
-        "DP-2,preferred,auto,1"
-        "DP-3,preferred,-1280x0,1"
-        "HDMI-A-1,preferred,-540x1080,1.25"
+        "DP-2,preferred,0x0,1"
+        "HDMI-A-1,preferred,512x1080,1.25"
       ];
 
       env = [
@@ -28,9 +25,9 @@
       };
 
       input = {
-        kb_layout = "us, jp";
-        kb_variant = "qwerty";
-        kb_options = "grp:caps_toggle";
+        kb_layout = "us";
+        #kb_variant = "qwerty";
+        #kb_options = "grp:caps_toggle";
 
         follow_mouse = 1;
         repeat_rate = 25;
@@ -118,8 +115,6 @@
       };
 
       windowrulev2 = [
-        "tile, class:^(Floorp)$"
-        "tile, class:^(firefox)$"
         "tile, class:^(kitty)$"
       ];
 
@@ -143,6 +138,7 @@
         "$mainMod, P, pseudo, # dwindle"
         "$mainMod, J, togglesplit, # dwindle"
         "$mainMod, F, fullscreen"
+        "$mainMod, L, exec, hyprlock"
         "$mainMod, F5, exec, pactl set-sink-volume "
 
         "$mainMod, F5, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"

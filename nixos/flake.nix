@@ -2,16 +2,21 @@
   description = "flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/release-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     xremap-flake.url = "github:xremap/nix-flake";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ...}@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser, ...}@inputs: 
     let
       system = "x86_64-linux";
       pkgs-unstable = import nixpkgs-unstable { inherit system; };
@@ -19,7 +24,7 @@
       nixosConfigurations = {
         wm2 = inputs.nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs system;
+            inherit system;
           };
           modules = [
             ./wm2/configuration.nix
@@ -36,16 +41,14 @@
           };
           modules = [
             ./jade57/configuration.nix
-            inputs.xremap-flake.nixosModules.default
-            {
-              environment.systemPackages = [
-              ];
+            inputs.xremap-flake.nixosModules.default {
+              environment.systemPackages = [];
             }
           ];
         };
         mlab = inputs.nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs system pkgs-unstable;
+            inherit system pkgs-unstable;
           };
           modules = [
             ./mlab/configuration.nix

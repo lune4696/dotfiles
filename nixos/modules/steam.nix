@@ -2,7 +2,9 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
+      "steam-original"
       "steam-unwrapped"
+      "steam-run"
     ];
 
   programs = {
@@ -24,7 +26,8 @@
   environment.systemPackages = with pkgs; [
     glxinfo
     mangohud
-    protonplus
+    lutris
+    protonup-qt
     vkd3d-proton
   ];
 }

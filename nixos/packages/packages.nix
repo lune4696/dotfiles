@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   nixpkgs.config = {
     allowUnfree = false;
   };
@@ -13,6 +13,7 @@
 
       # editor
       helix
+      vim
 
       # compress/decompress
       gnutar
@@ -26,8 +27,8 @@
       # monitoring
       bottom
       htop
-      neofetch
-      
+      fastfetch
+
       # wayland
       wget
       wev
@@ -35,6 +36,7 @@
       wtype
       wayland-scanner
       wlroots
+      wlr-randr
 
       # hardware
       brightnessctl
@@ -65,6 +67,7 @@
 
       # file manager
       ranger
+      kdePackages.dolphin
 
       # cli app
       tree
@@ -79,30 +82,34 @@
       gcc
       llvm
       cmake
-      # elixir
-      elixir
-      elixir-ls
+
       # markdown
       marksman
+
+      # java
+      jdk17
+      jdk21
+      clojure
+      clojure-lsp
+      clj-kondo
+      leiningen
+
       # nix
       nil
+      
       # python
       python314
       pyright
+      
       # zig
       zig
       zls
-
-      # qt5
-      qt5.full
-      qtcreator
-      libsForQt5.kio-extras
-      libsForQt5.ffmpegthumbs
-      
+ 
       # other
       bottles
       mpv
       pandoc
+      inputs.zen-browser.packages."${system}".twilight
     ];
   };
 }

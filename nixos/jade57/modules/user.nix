@@ -1,6 +1,5 @@
 { pkgs, ... }: { 
   users = {
-    defaultUserShell = pkgs.bash;
     users.lune = {
       isNormalUser = true;
       description = "lune";
