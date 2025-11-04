@@ -1,0 +1,6 @@
+[Added Associations]
+text/css=emacs.desktop
+
+[Default Applications]
+inode/directory=thunar.desktop
+x-directory/normal=thunar.desktop
