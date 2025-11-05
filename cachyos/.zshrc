@@ -10,7 +10,9 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-PATH="$HOME/.emacs.d/bin:$PATH"
+# emacs-wayland 用の設定 (emacs とは設定ディレクトリが異なる)
+PATH="$HOME/.config/emacs/bin:$PATH"
+export XMODIFIERS=@im=fcitx
 
 # ZVM
 export ZVM_INSTALL="$HOME/.zvm/self"
