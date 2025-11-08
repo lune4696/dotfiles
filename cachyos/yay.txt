@@ -227,6 +227,7 @@ vim
 vlc-plugins-all
 vulkan-radeon
 waybar
+wdisplays
 wget
 which
 wireless-regdb
