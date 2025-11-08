@@ -60,21 +60,21 @@
   // wofi Application Launcher
   "custom/appmenu": {
     "format": "   ",
-    "on-click": "sleep 0.2;wofi -show drun -replace",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+    "on-click": "sleep 0.2;rofi -show drun -show-icons -auto-close",
+    "tooltip-format": "app launcher"
   },
 
   // wofi Application Launcher
   "custom/appmenuicon": {
     "format": "",
-    "on-click": "sleep 0.2;wofi -show drun -replace",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+    "on-click": "sleep 0.2;rofi -show drun -show-icons -auto-close",
+    "tooltip-format": "app launcher"
   },
 
   // Power Menu
   "custom/exit": {
     "format": " 󰐥 ",
-    "on-click": "~/.config/waybar/scripts/power-menu.sh",
+    "on-click": "sleep 0.2;rofi -show power -modes 'power:~/.config/rofi/rofi_system.sh'",
     "tooltip-format": "Power Menu"
   },
 

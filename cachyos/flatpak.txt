@@ -1,0 +1,5 @@
+app.zen_browser.zen
+com.usebottles.bottles
+org.blender.Blender
+org.godotengine.Godot
+org.kicad.KiCad

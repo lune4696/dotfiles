@@ -150,7 +150,8 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
-    MOD+F                               { fullscreen-window; }
+    MOD+F                               { maximize-column; }
+    MOD+SHIFT+F                         { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
